@@ -58,7 +58,9 @@ int *Contigious_Sub_Array(int *arr, int len)
 				sum = 0;
 			}
 			else
+			{
 				j++;
+			}
 		}
 		if (i == len - 1 && j == len - 1)
 			break;
