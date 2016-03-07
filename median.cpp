@@ -96,7 +96,7 @@ float median_1(struct node *start)
 		ptr=ptr->next;
 	}
 
-	if ((count % 2) != 0)
+	/*if ((count % 2) != 0)
 	{
 		int no = (count / 2) + 1;
 		count = 1;
@@ -135,7 +135,31 @@ float median_1(struct node *start)
 	//	printf("Median=%f", (n1 + n2) / (2.0));
 		medianvalue=(n1+n2)/(2.0);
 		return medianvalue;
+	}*/
+	struct node *ptr1=start;
+
+	while(i<count)
+	{
+			if (i== (count)/2 || i== count/2-1)
+			{
+					if ( (count%2)!=0 && (i==count/2))
+					{
+						medianvalue=ptr1->data;
+						break;
+					}
+					else if((count%2==0) && (i==count/2-1))
+					{
+						 medianvalue=ptr1->data + ptr1->next->data;
+							medianvalue=medianvalue/2.0;
+							break;
+					}
+			
+
+			i++;
+			ptr1=ptr1->next;
+			}
 	}
+	return medianvalue;
 
 	}
 
